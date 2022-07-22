@@ -1,0 +1,500 @@
+.hero {
+    position: relative;
+    display: flex;
+
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 502px;
+    background-color: var(--background_pink);
+
+    letter-spacing: 0.04em;
+    color: var(--primary_color);
+
+    overflow: hidden;
+}
+
+.hero__container {
+    padding-top: 194px;
+    position: relative;
+}
+
+
+.hero__wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+
+    transition: ease all .5s;
+}
+
+
+.hero__title {
+    @include font(400, 26px, 29.77px);
+    font-family: 'Titan One', sans-serif;
+    display: block;
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+}
+
+.hero__span {
+    @include font(400, 48px, 46.32px);
+    color: var(--main_color);
+    letter-spacing: 0;
+}
+
+.button__list {
+    display: flex;
+}
+
+.button__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.hero__button {
+    @include font(400, 8px, 10px);
+    max-width: 83px;
+    height: 24px;
+
+    padding: 9px 13px;
+    letter-spacing: 0;
+
+    @include alignment(inline-flex, center, center);
+
+    border-style: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.hero__button--red {
+    width: 107px;
+    background-color: var(--title-color);
+    color: var(--primary_color);
+
+    transition: background-color .25s linear;
+
+    &:visited {
+        background-color: inherit;
+    }
+}
+
+.hero__button--white {
+    background-color: var(--primary_color);
+    color: var(--title-color);
+
+    transition: background-color .25s linear;
+
+    &:hover,
+    &:focus {
+        background-color: var(--button_text_color);
+    }
+
+    &:visited {
+        background-color: inherit;
+    }
+}
+
+.hero__icecream-wrapper {
+    position: absolute;
+    top: 83px;
+    left: 36px;
+    width: 346px;
+    height: 344px;
+
+    z-index: 1;
+
+    border-radius: 50%;
+    background-color: var(--main_pink_color);
+
+    transition: ease all .5s;
+}
+
+.hero__icecream-image {
+    position: absolute;
+    top: 9px;
+    left: 81px;
+    z-index: 3;
+
+    transform: translate(0, 100%);
+    animation: transform 500ms 500ms forwards;
+    -webkit-animation: transform 500ms 500ms forwards;
+    -moz-animation: transform 500ms 500ms forwards;
+
+    @keyframes transform {
+        0% {
+            transform: translate(0,100%);
+            animation-timing-function: ease-in;
+        }
+
+        100% {
+            transform: translate(0, 0%);
+            animation-timing-function: ease-in;
+        }      
+    }
+}
+
+.about-milk {
+    display: none;
+
+}
+
+.about-milk-img {
+    position: relative;
+}
+
+.about-milk__text {
+    @include alignment(flex, flex-start, center);
+    flex-direction: column;
+
+    width: 300px;
+    text-align: left;
+    margin-left: 10px;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.about-milk__about {
+    position: absolute;
+    background-color: var(--primary_color);
+    color: var(--main_color);
+}
+
+.about-milk__about.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hero__right-side {
+    display: none;
+    position: relative;
+}
+
+.tasty-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    animation: opacity 500ms 1000ms forwards;
+    -webkit-animation: opacity 500ms 1000ms forwards;
+    -moz-animation: opacity 500ms 1000ms forwards;
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+            animation-timing-function: ease-in;
+        }
+
+        100% {
+            opacity: 1;
+            animation-timing-function: ease-in;
+        }      
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    .hero__container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767.9px) {
+    .hero__icecream-wrapper {
+        left: 75px;
+}
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero {
+        height: 416px;
+    }
+
+    .hero__container {
+        padding-top: 0;
+    }
+
+    .hero__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0px;
+        height: 100%;
+    }
+
+    .hero__left-side {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 102px;
+    }
+    
+
+    .hero__right-side {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 92px;
+    }
+
+    .hero__title {
+        @include font(400, 22px, 25.19px);
+    }
+
+    .hero__span {
+        @include font(400, 34px, 30.77px);
+        letter-spacing: 0.04;
+    }
+
+    .button__list {
+        margin-bottom: 20px;
+    }
+
+    .hero__icecream-wrapper {
+        top: 43px;
+        left: 248px;
+        width: 335px;
+        height: 333px;
+
+        z-index: 1;
+
+        border-radius: 50%;
+        background-color: var(--main_pink_color);
+
+    }
+
+    .hero__icecream-image {
+        top: 37px;
+        left: 74px;
+    }
+
+    .eateries__list {
+        display: block;
+        @include font(400, 8px, 10px);
+
+        margin-right: 8px;
+        margin-bottom: 70px;
+        text-align: right;
+    }
+
+
+    .eateries__span--red {
+        font-family: 'Titan One', sans-serif;
+        @include font(400, 28px, 32px);
+        color: var(--main_color);
+    }
+
+    .eateries__item {
+        position: relative;
+        z-index: 2;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .eateries__item::before {
+        position: absolute;
+        z-index: -1;
+        top: -2.5px;
+        right: -8px;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-color: var(--primary_color);
+        border-radius: 50%;
+    }
+
+    .tasty-image {
+        display: block;
+        width: 190px;
+        height: 150px;
+        background-size: 190px 150px;
+    }
+
+    .about-milk {
+        @include alignment(flex, center, center);
+    }
+
+    .about-milk__about {
+        padding: 13px;
+        @include font(400, 8px, 13px);
+
+        border-radius: 25px;
+
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+    .about-milk__text {
+        @include font(400, 8px, 12px);
+    }
+
+    
+    .more-info {
+        @include alignment(flex, center, center);
+
+        height: 18px;
+        width: 18px;
+        padding: 4px;
+        border-radius: 50%;
+        background-color: var(--primary_color);
+        margin-top: 7px;
+
+        transition: background-color .25s linear;
+
+        &:hover, &:focus {
+            background-color: var(--button_text_color);
+        }
+        
+        border: none;
+        cursor: pointer;
+    }
+
+    .more-info__icon {
+        fill: var(--main_color);
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .hero {
+        height: 664px;
+    }
+    
+    .hero__left-side {
+        margin-top: 147px;
+    }
+    
+
+    .hero__right-side {
+        margin-top: 152px;
+        
+    }
+
+    .hero__title {
+        @include font(400, 38px, 44px);
+    }
+
+    .hero__span {
+        @include font(400, 58px, 53px);
+    }
+
+    .hero__icecream-wrapper {
+        top: 54px;
+        left: 517px;
+        width: 534px;
+        height: 534px;
+
+    }
+
+    .hero__icecream-image {
+        top: 54px;
+        left: 119px;
+    }
+
+    .eateries__list {
+        top: 152px;
+        right: 32px;
+        @include font(400, 14px, 18px);
+    }
+
+
+    .eateries__span--red {
+        @include font(400, 46px, 53px);
+    }
+
+    .eateries__list {
+        margin-right: 16px;
+        margin-bottom: 103px;
+    }
+
+    .eateries__item {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .eateries__item::before {
+        right: -16px;
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .tasty-image {
+        width: 304px;
+        height: 241px;
+        background-size: 304px 241px;
+    }
+
+    .about-milk__about {
+        padding: 13px;
+        @include font(400, 12px, 20px);
+
+        border-radius: 25px;
+
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .about-milk__text {
+        @include font(400, 14px, 20px);
+    }
+
+    
+    .more-info {
+        @include alignment(flex, center, center);
+
+        height: 26px;
+        width: 26px;
+        margin-top: 20px;
+    }
+
+    .more-info__icon {
+        width: 9px;
+        height:  12px;
+    }
+
+    .hero__button {
+        @include font(400, 14px, 18px);
+        max-width: 138px;
+        height: 40px;
+
+
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+
+    .hero__button--red {
+        background-color: var(--title-color);
+        color: var(--primary_color);
+
+        &:visited {
+            background-color: inherit;
+        }
+    }
+
+    .hero__button--white {
+        background-color: var(--primary_color);
+        color: var(--title-color);
+
+        &:hover,
+        &:focus {
+            background-color: var(--button_text_color);
+        }
+
+        &:visited {
+            background-color: inherit;
+        }
+    }
+}

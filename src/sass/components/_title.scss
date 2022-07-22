@@ -1,0 +1,21 @@
+.title {
+  font-family: 'Titan One', sans-serif;
+  color: var(--main_color);
+  @include font(400, 34px, 39px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .title {
+      font-size: 48px;
+      line-height: 55px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .title {
+      font-size: 58px;
+      line-height: 66px;
+      letter-spacing: 0.06em;
+  }
+}
